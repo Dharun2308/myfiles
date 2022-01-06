@@ -22,20 +22,28 @@ clear
 # Clone the source code
 
 git clone https://git.openwrt.org/openwrt/openwrt.git
-
-
-cp -r source_temp/files/ openwrt/files
-cp source_temp/.config openwrt/.config
-cp source_temp/target/linux/generic/hack-5.4/690-mptcp_v0.96.patch openwrt/target/linux/generic/hack-5.4/690-mptcp_v0.96.patch
-cp source_temp/target/linux/bcm27xx/bcm2711/config-5.4  openwrt/target/linux/bcm27xx/bcm2711/config-5.4
-
-sudo rm -r source_temp/
-
 cd openwrt
-
 git checkout v21.02.1
 
-echo "src-git openmptcprouter https://github.com/Ysurac/openmptcprouter-feeds.git" >>feeds.conf.default
+# custom files download
+svn checkout https://github.com/Dharun2308/myfiles/trunk/custom_files/MI4C/files
+
+# .config file
+wget -L https://raw.githubusercontent.com/Dharun2308/myfiles/main/menu_config_files/MI4C/v1/.config
+
+# MPTCP patch file download and move to correct location:
+wget --no-check-certificate --content-disposition https://github.com/Dharun2308/myfiles/blob/main/patch_files/openwrt_v21.02.1_kernel_5.4/v2/999-mptcp_v0.96.patch
+
+mv 999-mptcp_v0.96.patch target/linux/generic/hack-5.4/999-mptcp_v0.96.patch
+
+# Download kernel config file
+cp source_temp/target/linux/bcm27xx/bcm2711/config-5.4  openwrt/target/linux/bcm27xx/bcm2711/config-5.4
+
+
+# Remove old and download latest feeds.conf.default
+rm feeds.conf.default
+wget -L https://raw.githubusercontent.com/Dharun2308/myfiles/main/feeds.conf.default/feeds.conf.default
+
 
 ./scripts/feeds clean
 
