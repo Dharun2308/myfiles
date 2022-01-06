@@ -49,5 +49,5 @@ MPTCP patch version 2 from arinc9 of openwrt forum. Works on openwrt version 21.
 * TCP congestion control
 
 ```ruby
-wget --no-check-certificate --content-disposition https://github.com/Dharun2308/myfiles/blob/main/patch_files/openwrt_v21.02.1_kernel_5.4/v2/999-mptcp_v0.96.patch
+wget -L https://raw.githubusercontent.com/Dharun2308/myfiles/main/patch_files/openwrt_v21.02.1_kernel_5.4/v2/999-mptcp_v0.96.patch
 ```

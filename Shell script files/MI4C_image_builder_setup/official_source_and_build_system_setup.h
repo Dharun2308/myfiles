@@ -32,7 +32,7 @@ svn checkout https://github.com/Dharun2308/myfiles/trunk/custom_files/MI4C/files
 wget -L https://raw.githubusercontent.com/Dharun2308/myfiles/main/menu_config_files/MI4C/v1/.config
 
 # MPTCP patch file download and move to correct location:
-wget --no-check-certificate --content-disposition https://github.com/Dharun2308/myfiles/blob/main/patch_files/openwrt_v21.02.1_kernel_5.4/v2/999-mptcp_v0.96.patch
+wget -L https://raw.githubusercontent.com/Dharun2308/myfiles/main/patch_files/openwrt_v21.02.1_kernel_5.4/v2/999-mptcp_v0.96.patch
 
 mv 999-mptcp_v0.96.patch target/linux/generic/hack-5.4/999-mptcp_v0.96.patch
 
@@ -51,7 +51,7 @@ wget -L https://raw.githubusercontent.com/Dharun2308/myfiles/main/feeds.conf.def
 
 ./scripts/feeds install -a
 
-make menuconfig -j$(nproc)
+make -j $(($(nproc)+1)) menuconfig 
 
 # Test the patches to see if they're applied fine
 
