@@ -21,15 +21,30 @@ clear
 
 # Clone the source code
 
-git clone https://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@github.com/dharun2308/openwrt.git
-
-clear
+git clone https://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@github.com/dharun2308/openwrt.git
 
 mv openwrt/openwrt* ./ || echo Error deleting unwanted files!! Will not work as intended..
-
 sudo rm -r openwrt || echo Error deleting unwanted files!! Will not work as intended..
-
 cd openwrt*
+
+# custom files download
+svn checkout https://github.com/Dharun2308/myfiles/trunk/custom_files/MI4C/files
+
+# .config file
+wget -L https://raw.githubusercontent.com/Dharun2308/myfiles/main/menu_config_files/MI4C/v1/.config
+
+# MPTCP patch file download and move to correct location:
+wget -L https://raw.githubusercontent.com/Dharun2308/myfiles/main/patch_files/openwrt_v21.02.1_kernel_5.4/v2/999-mptcp_v0.96.patch
+mv 999-mptcp_v0.96.patch target/linux/generic/hack-5.4/999-mptcp_v0.96.patch
+
+# Download kernel config file
+wget -L https://raw.githubusercontent.com/Dharun2308/myfiles/main/kernel_config_files/RPI/config-5.4
+mv config-5.4 target/linux/bcm27xx/bcm2711/config-5.4
+
+# Remove old and download latest feeds.conf.default
+rm feeds.conf.default
+wget -L https://raw.githubusercontent.com/Dharun2308/myfiles/main/feeds.conf.default/feeds.conf.default
+
 
 ./scripts/feeds clean
 
@@ -39,7 +54,7 @@ cd openwrt*
 
 clear
 
-make menuconfig -j$(nproc)
+make -j $(($(nproc)+1)) menuconfig 
 
 clear
 
@@ -57,7 +72,7 @@ make download
 
 make -j $(($(nproc)+1)) || clear && echo Error building image
 
-clear
+
 
 
 
