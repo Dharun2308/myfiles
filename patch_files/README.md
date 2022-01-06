@@ -38,6 +38,9 @@ MPTCP patch version 1 from arinc9 of openwrt forum. Works on openwrt version 21.
 * MPTCP path-manager control
 * MPTCP advanced scheduler control
 
+```ruby
+wget -L https://raw.githubusercontent.com/Dharun2308/myfiles/main/patch_files/openwrt_v19.07.8_kernel_4.14/v1/999-mptcp_v0.94.patch
+```
 
 ### V2 (Jan 2022 release)
 

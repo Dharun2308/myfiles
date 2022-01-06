@@ -33,12 +33,11 @@ wget -L https://raw.githubusercontent.com/Dharun2308/myfiles/main/menu_config_fi
 
 # MPTCP patch file download and move to correct location:
 wget -L https://raw.githubusercontent.com/Dharun2308/myfiles/main/patch_files/openwrt_v21.02.1_kernel_5.4/v2/999-mptcp_v0.96.patch
-
 mv 999-mptcp_v0.96.patch target/linux/generic/hack-5.4/999-mptcp_v0.96.patch
 
 # Download kernel config file
-cp source_temp/target/linux/bcm27xx/bcm2711/config-5.4  openwrt/target/linux/bcm27xx/bcm2711/config-5.4
-
+wget -L https://raw.githubusercontent.com/Dharun2308/myfiles/main/kernel_config_files/MI4C/config-5.4
+mv config-5.4 target/linux/bcm27xx/bcm2711/config-5.4
 
 # Remove old and download latest feeds.conf.default
 rm feeds.conf.default
@@ -67,7 +66,7 @@ make download
 
 make -j $(($(nproc)+1)) || clear && echo Error building image
 
-clear
+
 
 
 
