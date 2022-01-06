@@ -64,7 +64,7 @@ make -j $(($(nproc)+1)) kernel_menuconfig
 
 make download
 
-make -j $(($(nproc)+1)) || clear && echo Error building image
+make -j $(($(nproc)+1)) 
 
 
 
