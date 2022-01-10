@@ -37,7 +37,7 @@ wget -L https://raw.githubusercontent.com/Dharun2308/myfiles/main/patch_files/op
 mv 999-mptcp_v0.96.patch target/linux/generic/hack-5.4/999-mptcp_v0.96.patch
 
 # Download kernel config file
-wget -L https://raw.githubusercontent.com/Dharun2308/myfiles/main/kernel_config_files/RPI/config-5.4
+wget -L https://raw.githubusercontent.com/Dharun2308/myfiles/main/kernel_config_file/RPI4/config-5.4
 mv config-5.4 target/linux/bcm27xx/bcm2711/config-5.4
 
 # Remove old and download latest feeds.conf.default
