@@ -60,7 +60,7 @@ clear
 
 # Test the patches to see if they're applied fine
 
-make target/linux/{clean,prepare} V=s
+make -j $(($(nproc)+1)) target/linux/{clean,prepare} V=s
 
 clear 
 
