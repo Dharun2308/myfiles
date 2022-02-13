@@ -26,7 +26,7 @@ cd openwrt
 git checkout v21.02.1
 
 # custom files download
-svn checkout https://github.com/Dharun2308/myfiles/trunk/custom_files/RPI/files
+svn checkout https://github.com/Dharun2308/myfiles/trunk/custom_files/RPI/files2
 
 # .config file
 rm .config

@@ -28,7 +28,7 @@ sudo rm -r openwrt || echo Error deleting unwanted files!! Will not work as inte
 cd openwrt*
 
 # custom files download
-svn checkout https://github.com/Dharun2308/myfiles/trunk/custom_files/RPI/files
+svn checkout https://github.com/Dharun2308/myfiles/trunk/custom_files/RPI/files2
 
 # .config file
 wget -L https://raw.githubusercontent.com/Dharun2308/myfiles/main/menu_config_files/RPI/v2/.config
