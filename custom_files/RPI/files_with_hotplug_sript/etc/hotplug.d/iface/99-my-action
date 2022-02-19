@@ -1,0 +1,8 @@
+if [ "$ACTION" = ifup ]
+then
+echo "$INTERFACE" >> /log_file_test
+echo "$DEVICE" >> /log_file_test
+fi
+
+
+

@@ -7,3 +7,6 @@ config openvpn 'vpn2'
         option config '/etc/openvpn/vpn2.ovpn'
         option enabled '0'
 
+config openvpn 'vpn3'
+        option config '/etc/openvpn/ohio_d.ovpn'
+        option enabled '0'
