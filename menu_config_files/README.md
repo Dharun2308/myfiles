@@ -30,6 +30,14 @@ Config file as of December 2021
 wget -L https://raw.githubusercontent.com/Dharun2308/myfiles/main/menu_config_files/MI4C/v1/.config
 ```
 
+# Virtualbox
+
+## V1
+Config file as of December 2021
+```ruby
+wget -L https://raw.githubusercontent.com/Dharun2308/myfiles/main/menu_config_files/Virtualbox/v1/.config
+```
+
 # MI4A Gigabit
 
 Config file as of January 2022. No MPTCP support
@@ -44,3 +52,4 @@ Config file as of January 2022. No MPTCP support
 ```ruby
 wget -L https://raw.githubusercontent.com/Dharun2308/myfiles/main/menu_config_files/TP-Link_Archer_C7_AC1750/.config
 ```
+

@@ -26,11 +26,11 @@ cd openwrt
 git checkout v21.02.1
 
 # custom files download
-svn checkout https://github.com/Dharun2308/myfiles/trunk/custom_files/RPI/files2
+svn checkout https://github.com/Dharun2308/myfiles/trunk/custom_files/Virtualbox/files
 
 # .config file
 rm .config
-wget -L https://raw.githubusercontent.com/Dharun2308/myfiles/main/menu_config_files/RPI4/v3/.config
+wget -L https://raw.githubusercontent.com/Dharun2308/myfiles/main/menu_config_files/Virtualbox/v1/.config
 
 # MPTCP patch file download and move to correct location:
 wget -L https://raw.githubusercontent.com/Dharun2308/myfiles/main/patch_files/openwrt_v21.02.1_kernel_5.4/v2/999-mptcp_v0.96.patch
