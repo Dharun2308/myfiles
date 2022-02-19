@@ -29,6 +29,7 @@ cd openwrt*
 
 # custom files download
 svn checkout https://github.com/Dharun2308/myfiles/trunk/custom_files/RPI/files2
+mv files2 files
 
 # .config file
 wget -L https://raw.githubusercontent.com/Dharun2308/myfiles/main/menu_config_files/RPI4/v3/.config
