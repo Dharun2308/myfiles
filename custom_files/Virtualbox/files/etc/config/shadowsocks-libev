@@ -23,9 +23,9 @@ config ss_rules 'ss_rules'
         option local_default 'forward'
 
 config server 'sss0'
-        option server_port '8388'
+        option server_port '8522'
         option password 'jaitra_speed_boost'
-        option method 'aes-256-gcm'
-        option server '65.1.30.52'
+        option method 'chacha20-ietf-poly1305'
+        option server '3.140.254.5'
 
 
